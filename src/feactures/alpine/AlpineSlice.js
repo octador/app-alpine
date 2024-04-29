@@ -1,7 +1,8 @@
 import { createSlice, current } from '@reduxjs/toolkit';
 import A110PURE from '../../asset/configurateur/modele/pure/modele_pure-couleur_blanche-jante_serac_1.jpg'
 import A110LEGENDE from '../../asset/configurateur/modele/legende/modele_legende-couleur_blanc-jante_legende-4.jpg'
-
+import PureModel from '../../asset/sources-homepage/versions/ALPINE-PURE-1.png';
+import LegendeModel from '../../asset/sources-homepage/versions/ALPINE-LEGENDE-1.png';
 
 
 const initialState = {
@@ -16,6 +17,7 @@ const initialState = {
       id: 1,
       version: 'A110-PURE',
       picture: A110PURE,
+      pictureSelect: PureModel,
       price: 54700,
       state100: 4.5,
       vMax: 250,
@@ -52,6 +54,7 @@ const initialState = {
       id: 2,
       version: 'A110-LEGENDE',
       picture: A110LEGENDE,
+      pictureSelect: LegendeModel ,
       price: 58500,
       state100: 4.2,
       vMax: 250,

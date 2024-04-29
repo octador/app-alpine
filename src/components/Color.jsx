@@ -1,4 +1,6 @@
 import { useDispatch, useSelector } from "react-redux";
+import { useEffect, useLayoutEffect, useState } from "react";
+
 import { changeColor } from "../feactures/alpine/AlpineSlice";
 import glacierWhite from "../asset/configurateur/couleurs/selection/blanc.jpg";
 import specialBlueAlpine from "../asset/configurateur/couleurs/selection/bleu.jpg";
@@ -31,84 +33,114 @@ function Color() {
     );
   };
 
+  // en venant de la page precedente, ca teleportait au bas de la page et non du debut, donc j'utilise ce code pour que ca envoie au debut de la page et non tout en bas. 
+  const [scrollToTop, setScrollToTop] = useState(true);
+
+  useEffect(() => {
+    // Simulate navigation from another link (replace with actual logic)
+    if (window.location.pathname !== '/current-page') {
+      setScrollToTop(true);
+    }
+  }, []);
+
+  useLayoutEffect(() => {
+    if (scrollToTop) {
+      window.scrollTo(0, 0);
+      setScrollToTop(false); // Reset after scrolling
+    }
+  }, [scrollToTop]);
+// fin du code scroll.
+
   return (
-    <div className="mt-5 mb-5">
+    <section className="py-16 md:px-12">
+      <div id="color_title" className="flex justify-center">
+        <h1 className="text-2xl md:text-4xl font-semibold">Choose the Color</h1>
+      </div>
 
-      <div className="d-flex vh-100 align-items-center justify-content-center flex-wrap">
-
-        <div className="">
+      <div className="flex flex-col md:flex-row items-center justify-center flex-wrap">
+        <div className="md:w-1/2 w-full">
           <img
+            className=""
             src={choiceCar.color.picture}
             alt={choiceCar.name}
-            height={'450px'}
           />
         </div>
 
-        <div className="d-flex flex-wrap gap-5 align-items-center justify-content-center">
-          <div>
-            <img
-              src={glacierWhite}
-              alt="Glacier White Opaque Paint"
-              height={"150px"}
-              id="1"
-              onClick={() =>
-                handleChangeColor(
-                  "Glacier White Opaque Paint ",
-                  0,
-                  "white",
-                  WhiteAlpine
-                )
-              }
-            />
-            <p>Glacier White Opaque Paint</p>
-          </div>
-
-          <div>
-            <img
-              src={deepBlackMetallic}
-              alt="Deep Black Metallic"
-              height={"150px"}
-              id="3"
-              onClick={() =>
-                handleChangeColor(
-                  "Deep Black Metallic",
-                  840,
-                  "black",
-                  blackAlpine
-                )
-              }
-            />
-            <div>
-              <p>Deep Black Metallic</p>
+        <div className="w-full flex flex-row md:flex-col flex-wrap gap-2 items-start justify-center cursor-pointer">
+          <div id="white">
+            <div className="shadow-lg w-[90px] md:w-[130px]">
+              <img
+                className=""
+                src={glacierWhite}
+                alt="Glacier White Opaque Paint"
+                id="1"
+                onClick={() =>
+                  handleChangeColor(
+                    "Glacier White Opaque Paint ",
+                    0,
+                    "white",
+                    WhiteAlpine
+                  )
+                }
+              />
+            </div>
+            <div className="flex flex-col">
+              <p className="text-sm">Glacier White <br/>Opaque</p>
+              <p className="font-semibold">0 €</p>
             </div>
           </div>
 
-          <div>
-            <img
-              src={specialBlueAlpine}
-              alt="Special Blue AlpinePaint "
-              height={"150px"}
-              id="2"
-              onClick={() =>
-                handleChangeColor(
-                  "Special Blue AlpinePaint ",
-                  1800,
-                  "blue",
-                  BlueAlpine
-                )
-              }
-            />
+          <div id="black" >
+            <div className="shadow-lg w-[90px] md:w-[130px]">
+              <img
+                className=""
+                src={deepBlackMetallic}
+                alt="Deep Black Metallic"
+                id="3"
+                onClick={() =>
+                  handleChangeColor(
+                    "Deep Black Metallic",
+                    840,
+                    "black",
+                    blackAlpine
+                  )
+                }
+              />
+            </div>
             <div>
-              <p>Special Blue AlpinePaint</p>
+              <p className="text-sm">Deep Black <br/> Metallic</p>
+              <p className="font-semibold">840 €</p>
             </div>
           </div>
 
+          <div id="blue">
+            <div className="shadow-lg w-[90px] md:w-[130px]">
+              <img
+                className=""
+                src={specialBlueAlpine}
+                alt="Special Blue AlpinePaint "
+                id="2"
+                onClick={() =>
+                  handleChangeColor(
+                    "Special Blue AlpinePaint ",
+                    1800,
+                    "blue",
+                    BlueAlpine
+                  )
+                }
+              />
+              <div></div>
+            </div>
+            <div className="flex flex-col">
+              <p className="text-sm">Special Blue <br/> Alpine</p>
+              <p className="font-semibold">1800 €</p>
+            </div>
+          </div>
         </div>
-
       </div>
 
       <Rims choiceCar={choiceCar} />
-    </div>
+    </section>
   );
 }
 

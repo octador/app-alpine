@@ -5,9 +5,9 @@ import Car from "./Car";
 function Configurator() {
   return (
     
-    <div>
+    <section className="h-screen">
       <Car/>
-    </div>
+    </section>
   );
 }
 

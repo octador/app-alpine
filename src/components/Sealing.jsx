@@ -8,7 +8,7 @@ import { changeSealing } from "../feactures/alpine/AlpineSlice";
 import DesignSealing from "./DesignSealing";
 
 function Sealing({ choiceCar }) {
-//   console.log(choiceCar.Sealing);
+  //   console.log(choiceCar.Sealing);
   const dispatch = useDispatch();
 
   const handleChangeSealing = (name, price) => {
@@ -22,63 +22,96 @@ function Sealing({ choiceCar }) {
   };
 
   return (
-    <div>
-      {choiceCar.id === 1 ? (
-        <>
-          <img
-            src={SealingPureStandard}
-            alt="sealing standard"
-            height={"150px"}
-            onClick={() =>
-              handleChangeSealing(
-                "bucket seats in black leatherand dinamica",
-                0
-              )
-            }
-          />
-          <p>bucket seats in black leatherand dinamica</p>
-          <p>price 0</p>
+    <>
+      <section className="flex flex-col gap-12">
+      <div id="color_title" className="flex justify-center text-center">
+        <h1 className="text-4xl font-semibold">Choose the Sealing</h1>
+      </div>
+        <div className="flex justify-center gap-4">
+          {choiceCar.id === 1 ? (
+            <>
+              <div className="w-[220px] flex flex-col gap-3 shadow-2xl rounded-sm p-2">
+                <img
+                  className=""
+                  src={SealingPureStandard}
+                  alt="sealing standard"
+                  height={"150px"}
+                  onClick={() =>
+                    handleChangeSealing(
+                      "bucket seats in black leatherand dinamica",
+                      0
+                    )
+                  }
+                />
+                <div>
+                <p className="font-medium text-md">Bucket seats in black leatherand dinamica</p>
+                <p className="font-bold text-xl">0 €</p>
+                </div>
+              </div>
 
-          <img
-            src={SealingPureBlack}
-            alt="sealing black"
-            height={"150px"}
-            onClick={() =>
-              handleChangeSealing(
-                "comfort seats in perforated black leather",
-                800
-              )
-            }
-          />
-        <p>comfort seats in perforated black leather</p>
-        <p>price 800</p>
-        </>
-      ) : null}
+              <div className="w-[220px] flex flex-col gap-3 shadow-2xl rounded-sm p-2">
+                <img
+                  className=""
+                  src={SealingPureBlack}
+                  alt="sealing black"
+                  height={"150px"}
+                  onClick={() =>
+                    handleChangeSealing(
+                      "comfort seats in perforated black leather",
+                      800
+                    )
+                  }
+                />
+                <div className="w-75">
+                <p className="font-medium text-md">Comfort seats in perforated black leather</p>
+                <p className="font-bold text-xl">800 €</p>
+                </div>
+              </div>
+            </>
+          ) : null}
+        </div>
 
-      {choiceCar.id === 2 ? (
-        <>
-          <img
-            src={SealingLegendStandard}
-            alt="sealing standard"
-            height={"150px"}
-            onClick={() =>
-              handleChangeSealing("comfort seats in black leather", 0)
-            }
-          />
-
-          <img
-            src={SealingLegendBrun}
-            alt="sealing black"
-            height={"150px"}
-            onClick={() =>
-              handleChangeSealing("comfort seats in brown leather", 800)
-            }
-          />
-        </>
-      ) : null}
-
+        <div>
+          {choiceCar.id === 2 ? (
+            <>
+              <div className="flex justify-center gap-4 ">
+                <div className="w-[220px] flex flex-col gap-3 shadow-2xl rounded-sm p-2">
+                  <img
+                    className=""
+                    src={SealingLegendStandard}
+                    alt="sealing standard"
+                    height={"150px"}
+                    onClick={() =>
+                      handleChangeSealing("comfort seats in black leather", 0)
+                    }
+                  />
+                  <div>
+                  <p className="font-medium text-md">Seats in black leather</p>
+                  <p className="font-bold text-xl">0 €</p>
+                  </div>
+                </div>
+                <div className="w-[220px] flex flex-col gap-3 shadow-2xl rounded-sm p-2">
+                  <img
+                    className="w-[220px] shadow-xl rounded-sm"
+                    src={SealingLegendBrun}
+                    alt="sealing black"
+                    height={"150px"}
+                    onClick={() =>
+                      handleChangeSealing("comfort seats in brown leather", 800)
+                    }
+                  />
+                  <div>
+                  <p className="font-medium text-md">Seats in brown leather</p>
+                  <p className="font-bold text-xl">800 €</p>
+                  </div>
+                </div>
+              </div>
+            </>
+          ) : null}
+        </div>
+      </section>
       <DesignSealing choiceCar={choiceCar} />
-    </div>
+    </>
   );
 }
 

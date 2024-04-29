@@ -18,120 +18,133 @@ import { rimColor } from "../feactures/alpine/AlpineSlice";
 function RimColor({ choiceCar }) {
   // console.log(choiceCar.color.slug);
   const dispatch = useDispatch();
-  const handleRimColor = (name,slug) => {
+  const handleRimColor = (name, slug) => {
     dispatch(
       rimColor({
-    idCar:choiceCar.id,
-    name:name,
-    slug:slug
-  }))
-    };
+        idCar: choiceCar.id,
+        name: name,
+        slug: slug,
+      })
+    );
+  };
   return (
-    <div>
-      {choiceCar.color.slug === "white" ? (
-        <div>
-          {choiceCar.color.slug === "white" &&
-          choiceCar.rims.name === "standard" ? (
-            <img
-              src={rimStandardCarWhite}
-              alt="rims white"
-              height={"250px"}
-              onClick={() => handleRimColor('standard', 'white')}
-            />
-          ) : null}
+    <>
+      <div className="flex justify-center">
+        {choiceCar.color.slug === "white" ? (
+          <div>
+            {choiceCar.color.slug === "white" &&
+            choiceCar.rims.name === "standard" ? (
+              <img
+                className="w-[420px]"
+                src={rimStandardCarWhite}
+                alt="rims white"
+                height={"250px"}
+                onClick={() => handleRimColor("standard", "white")}
+              />
+            ) : null}
 
-          {choiceCar.color.slug === "white" &&
-          choiceCar.rims.name === "serac" ? (
-            <img
-              src={rimSeracCarWhite}
-              alt="rims white"
-              height={"250px"}
-              onClick={() => handleRimColor('serac','white')}
-            />
-          ) : null}
+            {choiceCar.color.slug === "white" &&
+            choiceCar.rims.name === "serac" ? (
+              <img
+                className="w-[420px]"
+                src={rimSeracCarWhite}
+                alt="rims white"
+                height={"250px"}
+                onClick={() => handleRimColor("serac", "white")}
+              />
+            ) : null}
 
-          {choiceCar.color.slug === "white" &&
-          choiceCar.rims.name === "legend" ? (
-            <img
-              src={rimLegendCarWhite}
-              alt="rims white"
-              height={"250px"}
-              onClick={() => handleRimColor('legend','white')}
-            />
-          ) : null}
-        </div>
-      ) : null}
-      
-      {choiceCar.color.slug === "black" ? (
-        <div>
-          {choiceCar.color.slug === "black" &&
-          choiceCar.rims.name === "standard" ? (
-            <img
-              src={rimStandardCarBlack}
-              alt="rims black"
-              height={"250px"}
-              onClick={() => handleRimColor("standard","black")}
-            />
-          ) : null}
+            {choiceCar.color.slug === "white" &&
+            choiceCar.rims.name === "legend" ? (
+              <img
+                className="w-[420px]"
+                src={rimLegendCarWhite}
+                alt="rims white"
+                height={"250px"}
+                onClick={() => handleRimColor("legend", "white")}
+              />
+            ) : null}
+          </div>
+        ) : null}
 
-          {choiceCar.color.slug === "black" &&
-          choiceCar.rims.name === "serac" ? (
-            <img
-              src={rimSeracCarBlack}
-              alt="rims black"
-              height={"250px"}
-              onClick={() => handleRimColor("serac","black")}
-            />
-          ) : null}
+        {choiceCar.color.slug === "black" ? (
+          <div>
+            {choiceCar.color.slug === "black" &&
+            choiceCar.rims.name === "standard" ? (
+              <img
+                className="w-[420px]"
+                src={rimStandardCarBlack}
+                alt="rims black"
+                height={"250px"}
+                onClick={() => handleRimColor("standard", "black")}
+              />
+            ) : null}
 
-          {choiceCar.color.slug === "black" &&
-          choiceCar.rims.name === "legend" ? (
-            <img
-              src={rimLegendCarBlack}
-              alt="rims black"
-              height={"250px"}
-              onClick={() => handleRimColor("legend","black")}
-            />
-          ) : null}
-        </div>
-      ) : null}
-      
+            {choiceCar.color.slug === "black" &&
+            choiceCar.rims.name === "serac" ? (
+              <img
+                className="w-[420px]"
+                src={rimSeracCarBlack}
+                alt="rims black"
+                height={"250px"}
+                onClick={() => handleRimColor("serac", "black")}
+              />
+            ) : null}
 
-      {choiceCar.color.slug === "blue" ? (
-        <div>
-          {choiceCar.color.slug === "blue" &&
-          choiceCar.rims.name === "standard" ? (
-            <img
-              src={rimStandardCarBlue}
-              alt="rims blue"
-              height={"250px"}
-              onClick={() => handleRimColor("standard","blue")}
-            />
-          ) : null}
+            {choiceCar.color.slug === "black" &&
+            choiceCar.rims.name === "legend" ? (
+              <img
+                className="w-[420px]"
+                src={rimLegendCarBlack}
+                alt="rims black"
+                height={"250px"}
+                onClick={() => handleRimColor("legend", "black")}
+              />
+            ) : null}
+          </div>
+        ) : null}
 
-          {choiceCar.color.slug === "blue" &&
-          choiceCar.rims.name === "serac" ? (
-            <img
-              src={rimSeracCarBlue}
-              alt="rims blue"
-              height={"250px"}
-              onClick={() => handleRimColor("serac","blue")}
-            />
-          ) : null}
+        {choiceCar.color.slug === "blue" ? (
+          <div>
+            {choiceCar.color.slug === "blue" &&
+            choiceCar.rims.name === "standard" ? (
+              <img
+                className="w-[420px]"
+                src={rimStandardCarBlue}
+                alt="rims blue"
+                height={"250px"}
+                onClick={() => handleRimColor("standard", "blue")}
+              />
+            ) : null}
 
-          {choiceCar.color.slug === "blue" &&
-          choiceCar.rims.name === "legend" ? (
-            <img
-              src={rimLegendCarblue}
-              alt="rims blue"
-              height={"250px"}
-              onClick={() => handleRimColor("legend","blue")}
-            />
-          ) : null}
-        </div>
-      ) : null}
-      <Sealing choiceCar={choiceCar}/>
-    </div>
+            {choiceCar.color.slug === "blue" &&
+            choiceCar.rims.name === "serac" ? (
+              <img
+                className="w-[420px]"
+                src={rimSeracCarBlue}
+                alt="rims blue"
+                height={"250px"}
+                onClick={() => handleRimColor("serac", "blue")}
+              />
+            ) : null}
+
+            {choiceCar.color.slug === "blue" &&
+            choiceCar.rims.name === "legend" ? (
+              <img
+                className="w-[420px]"
+                src={rimLegendCarblue}
+                alt="rims blue"
+                height={"250px"}
+                onClick={() => handleRimColor("legend", "blue")}
+              />
+            ) : null}
+          </div>
+        ) : null}
+      </div>
+    
+      <Sealing choiceCar={choiceCar} />
+    </>
+
   );
 }
 

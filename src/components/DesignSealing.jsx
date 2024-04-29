@@ -16,96 +16,142 @@ import viewPureBrown1 from "../asset/configurateur/interieurs/vues/cuir-brun-1.j
 import viewPureBrown2 from "../asset/configurateur/interieurs/vues/cuir-brun-2.jpg";
 import viewPureBrown3 from "../asset/configurateur/interieurs/vues/cuir-brun-3.jpg";
 
-import MediaAndNavigatiion from './MediaAndNavigation'
+import MediaAndNavigatiion from "./MediaAndNavigation";
 
 function DesignSealing({ choiceCar }) {
   return (
-    <div>
-      {choiceCar.id === 1 &&
-      choiceCar.Sealing.name === "comfort seats in perforated black leather" ? (
-        <>
-          <img
-            src={viewPurestandard1}
-            alt=" view sealing standard"
-            height={"150px"}
-          />
-          <img
-            src={viewPurestandard3}
-            alt=" view sealing standard"
-            height={"150px"}
-          />
-          <img
-            src={viewPurestandard2}
-            alt=" view sealing standard"
-            height={"150px"}
-          />
-        </>
-      ) : null}
+    <>
+      <div className="flex justify-center gap-4">
+        {choiceCar.id === 1 &&
+        choiceCar.Sealing.name ===
+          "comfort seats in perforated black leather" ? (
+          <>
+          <div className="flex flex-wrap">
 
-      {choiceCar.id === 1 &&
-      choiceCar.Sealing.name === "bucket seats in black leatherand dinamica" ? (
-        <>
-          <img
-            src={viewPureDinamica1}
-            alt=" view sealing diamantica"
-            height={"150px"}
-          />
-          <img
-            src={viewPureDinamica3}
-            alt=" view sealing diamantica"
-            height={"150px"}
-          />
-          <img
-            src={viewPureDinamica2}
-            alt=" view sealing diamantica"
-            height={"150px"}
-          />
-        </>
-      ) : null}
+            <div className="shadow-2xl">
+              <img
+                className="w-[320px] shadow-xl rounded-sm cursor-pointer"
+                src={viewPurestandard1}
+                alt=" view sealing standard"
+                height={"150px"}
+              />
+            </div>
+            <div className="shadow-2xl">
+              <img
+                className="w-[320px] shadow-xl rounded-sm cursor-pointer"
+                src={viewPurestandard3}
+                alt=" view sealing standard"
+                height={"150px"}
+              />
+            </div>
+            <div className="shadow-2xl">
+              <img
+                className="w-[320px] shadow-xl rounded-sm cursor-pointer"
+                src={viewPurestandard2}
+                alt=" view sealing standard"
+                height={"150px"}
+              />
+            </div>
+          </div>
 
-      {choiceCar.id === 2 &&
-      choiceCar.Sealing.name === "comfort seats in black leather" ? (
-        <>
-          <img
-            src={viewLegendBlack1}
-            alt=" view sealing black"
-            height={"150px"}
-          />
-          <img
-            src={viewLegendBlack3}
-            alt=" view sealing black"
-            height={"150px"}
-          />
-          <img
-            src={viewLegendBlack2}
-            alt=" view sealing black"
-            height={"150px"}
-          />
-        </>
-      ) : null}
+          </>
+        ) : null}
 
-      {choiceCar.id === 2 &&
-      choiceCar.Sealing.name === "comfort seats in brown leather" ? (
-        <>
-          <img
-            src={viewPureBrown1}
-            alt=" view sealing brown"
-            height={"150px"}
-          />
-          <img
-            src={viewPureBrown3}
-            alt=" view sealing brown"
-            height={"150px"}
-          />
-          <img
-            src={viewPureBrown2}
-            alt=" view sealing brown"
-            height={"150px"}
-          />
-        </>
-      ) : null}
-<MediaAndNavigatiion choiceCar={choiceCar}/>
-    </div>
+        {choiceCar.id === 1 &&
+        choiceCar.Sealing.name ===
+          "bucket seats in black leatherand dinamica" ? (
+          <>
+            <div className="shadow-2xl">
+              <img
+                className="w-[320px] shadow-xl rounded-sm cursor-pointer"
+                src={viewPureDinamica1}
+                alt=" view sealing diamantica"
+                height={"150px"}
+              />
+            </div>
+            <div className="shadow-2xl">
+              <img
+                className="w-[320px] shadow-xl rounded-sm cursor-pointer"
+                src={viewPureDinamica3}
+                alt=" view sealing diamantica"
+                height={"150px"}
+              />
+            </div>
+            <div className="shadow-2xl">
+              <img
+                className="w-[320px] shadow-xl rounded-sm cursor-pointer"
+                src={viewPureDinamica2}
+                alt=" view sealing diamantica"
+                height={"150px"}
+              />
+            </div>
+          </>
+        ) : null}
+
+        {choiceCar.id === 2 &&
+        choiceCar.Sealing.name === "comfort seats in black leather" ? (
+          <>
+          <div className="flex flex-wrap justify-center gap-3">
+            <div className="shadow-2xl w-36">
+              <img
+                className="md:w-[320px] shadow-xl rounded-sm cursor-pointer"
+                src={viewLegendBlack1}
+                alt=" view sealing black"
+                height={"150px"}
+              />
+            </div>
+            <div className="shadow-2xl w-36">
+              <img
+                className="md:w-[320px] shadow-xl rounded-sm cursor-pointer"
+                src={viewLegendBlack3}
+                alt=" view sealing black"
+                height={"150px"}
+              />
+            </div>
+            <div className="shadow-2xl w-36">
+              <img
+                className="md:w-[320px] shadow-xl rounded-sm cursor-pointer"
+                src={viewLegendBlack2}
+                alt=" view sealing black"
+                height={"150px"}
+              />
+            </div>
+            </div>
+          </>
+        ) : null}
+
+        {choiceCar.id === 2 &&
+        choiceCar.Sealing.name === "comfort seats in brown leather" ? (
+          <>
+            <div className="shadow-2xl">
+              <img
+                className="w-[320px] shadow-xl rounded-sm cursor-pointer"
+                src={viewPureBrown1}
+                alt=" view sealing brown"
+                height={"150px"}
+              />
+            </div>
+            <div className="shadow-2xl">
+              <img
+                className="w-[320px] shadow-xl rounded-sm cursor-pointer"
+                src={viewPureBrown3}
+                alt=" view sealing brown"
+                height={"150px"}
+              />
+            </div>
+            <div className="shadow-2xl">
+              <img
+                className="w-[320px] shadow-xl rounded-sm cursor-pointer"
+                src={viewPureBrown2}
+                alt=" view sealing brown"
+                height={"150px"}
+              />
+            </div>
+          </>
+        ) : null}
+      </div>
+      <MediaAndNavigatiion choiceCar={choiceCar} />
+    </>
   );
 }
 

@@ -19,40 +19,54 @@ function Rims({ choiceCar }) {
   };
 
   return (
-    <div className="mt-5 vh-100">
-      <div className="d-flex">
-        <img
-          src={nameRimStandard}
-          alt="rims standard"
-          height={"150px"}
-          onClick={() => handleChangeRim("standard", 0)}
-        />
-        <p>standard</p>
-        <p>price 0 €</p>
+    <>
+      <section className="py-12">
+        <div id="color_title" className="flex justify-center">
+          <h1 className="text-4xl font-semibold">Choose the Rims</h1>
+        </div>
+        <div className="py-16 flex flex-col gap-16">
+          <div className="flex justify-center">
+            <div className="flex gap-4">
+              <div className="p-2 shadow-xl rounded-sm">
+                <img
+                  className="w-[180px]"
+                  src={nameRimStandard}
+                  alt="rims standard"
+                  onClick={() => handleChangeRim("standard", 0)}
+                />
+                <p className="font-medium text-lg">Standard</p>
+                <p className="font-bold text-xl"> 0 €</p>
+              </div>
 
-        <img
-          src={nameRimSerac}
-          alt="rims serac"
-          height={"150px"}
-          onClick={() => handleChangeRim("serac", 1000)}
-        />
-        <p>serac</p>
-        <p>price 1000 €</p>
-        {choiceCar.id === 2 ? (
-          <div>
-            <img
-              src={nameRimLegende}
-              alt="rims legende"
-              height={"150px"}
-              onClick={() => handleChangeRim("legend", 0)}
-            />
-            <p>legend</p>
-            <p>price 0€</p>
+              <div className="p-2 shadow-xl rounded-sm">
+                <img
+                  className="w-[180px]"
+                  src={nameRimSerac}
+                  alt="rims serac"
+                  onClick={() => handleChangeRim("serac", 1000)}
+                />
+                <p className="font-medium text-lg">Serac</p>
+                <p className="font-bold text-xl">1000 €</p>
+              </div>
+
+              {choiceCar.id === 2 ? (
+                <div className="p-2 shadow-xl rounded-sm">
+                  <img
+                    className="w-[180px]"
+                    src={nameRimLegende}
+                    alt="rims legende"
+                    onClick={() => handleChangeRim("legend", 0)}
+                  />
+                  <p className="font-medium text-lg">Legend</p>
+                  <p className="font-bold text-xl"> 0€</p>
+                </div>
+              ) : null}
+            </div>
           </div>
-        ) : null}
-      </div>
-      <RimColor choiceCar={choiceCar} />
-    </div>
+          <RimColor choiceCar={choiceCar} />
+        </div>
+      </section>
+    </>
   );
 }
 
