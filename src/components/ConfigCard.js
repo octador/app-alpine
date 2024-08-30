@@ -1,7 +1,5 @@
 import React from "react";
-import Color from "./Color";
-import Rims from "./Rims";
-import Sealing from "./Sealing";
+
 
 function ConfigCard({ choiceCar }) {
   let priceTotal = [];
