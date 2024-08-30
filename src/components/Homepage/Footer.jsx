@@ -2,10 +2,6 @@ import React from "react";
 import alpineLogo from "../../asset/sources-homepage/logo/logo-white.png";
 
 const Footer = () => {
-  const handleClick = () => {
-    // Handle button click
-  };
-
   return (
     <footer className="bg-slate-900">
       <div className="mx-auto w-full max-w-screen-xl p-4 py-6 lg:py-8">
