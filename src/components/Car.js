@@ -60,8 +60,12 @@ function Car() {
             </div>
           </div>
         ))}
+        
+          <p>lorem10
+          </p>
       </div>
     </div>
+  
   );
 }
 
